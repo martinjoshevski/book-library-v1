@@ -17,7 +17,6 @@ function NavigationBar() {
   return (
     <div
       style={{
-        display: "block",
         width: "100%",
       }}
     >
