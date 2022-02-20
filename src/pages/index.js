@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navbar/NavigationBar";
 import Banner from "./components/Banner/Banner";
 import Cars from "./components/Cars/Cars";
+import AnimeAPI from "./components/AnimeAPI/AnimeAPI";
 import { Container } from "reactstrap";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <Banner />
       <Container className="pt-4">
         <Cars />
+        <AnimeAPI />
       </Container>
     </div>
   );
