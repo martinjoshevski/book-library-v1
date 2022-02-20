@@ -1,6 +1,6 @@
-#the db for the books
+#the db for the anime
 
-books = [
+db = [
 
    {"Title":"Angels and Demons", "Author":"Dan Brown", "Price":500},
    {"Title":"Gone Girl", "Author":"Gillian Flynn", "Price":730},
