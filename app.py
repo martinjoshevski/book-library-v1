@@ -7,13 +7,15 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     # use the filter() to filter the books for: price, tags
-    books_under500 = filter(price_under500, books)
-    for under500 in books_under500:
-        print(dict(under500)["Title"])
+    #books_under500 = filter(price_under500, books)
+    #for under500 in books_under500:
+        #print(dict(under500)["Title"])
     
-    books_above500 = filter(price_above500, books)
-    for over500 in books_under500:
-        print(dict(under500)["Title"])
+    #books_above500 = filter(price_above500, books)
+    #for over500 in books_under500:
+        #print(dict(under500)["Title"])
+    
+    return "Hey"
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
