@@ -1,7 +1,9 @@
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navbar/NavigationBar";
-import SliderCarousel from "./components/SliderCarousel/SliderCarousel";
+import Banner from "./components/Banner/Banner";
+import Cars from "./components/Cars/Cars";
+import { Container } from "reactstrap";
 
 export default function Home() {
   return (
@@ -15,10 +17,14 @@ export default function Home() {
       <Head>
         <title>Books Library</title>
         <meta name="description" content="Books Library" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
-      <SliderCarousel />
+      <Banner />
+      <Container className="pt-4">
+        <Cars />
+      </Container>
     </div>
   );
 }
