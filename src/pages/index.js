@@ -16,7 +16,7 @@ export default function Home() {
         }
       `}</style>
       <Head>
-        <title>Books Library</title>
+        <title>Books Library v1</title>
         <meta name="description" content="Books Library" />
 
         <link rel="icon" href="/favicon.ico" />
