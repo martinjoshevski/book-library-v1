@@ -1,28 +1,18 @@
-from flask import Flask, request, jsonify
-from backend.models.filters import price_under500, price_above500
-from backend.database import db
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from backend.routes import auth as auth_blueprint
 
-app = Flask(__name__)
+db = SQLAlchemy()
 
-@app.route("/")
-def home():
-    return "Hey, retard"
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/sigup", methods=["GET", "POST"]) 
-def signup(id,username,password):
-    global collection_SignUp
+    app.config['SECRET_KEY'] = ''#secret key goes here
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
-    for i in range(100):
-        post = {f"_id":i+1, "name": {username}, "password":{password}}
+    db.init_app(app)
 
-    collection_SignUp.insert_one(post)
+    app.register_blueprint(auth_blueprint)
 
-    return collection_SignUp
 
-@app.route("/login", methods=["GET","POST"])
-def login(id,username,password):
-    #here needs to check the db and match the input with the db
-    pass
-
-if __name__ == "__main__":
-    app.run(debug=True)
+    return app
