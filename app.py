@@ -1,19 +1,18 @@
-from flask import Flask, request, jsonify
-from backend.models.filters import price_under500, price_above500
-from backend.models.manga import db
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from backend.routes import auth as auth_blueprint
 
-app = Flask(__name__)
+db = SQLAlchemy()
 
-@app.route("/hey")
-def home():
-    return "Hey, retard"
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/add")
-def adding_manga():
+    app.config['SECRET_KEY'] = ''#secret key goes here
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
-    return
+    db.init_app(app)
+
+    app.register_blueprint(auth_blueprint)
 
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+    return app
